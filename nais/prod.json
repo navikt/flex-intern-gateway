@@ -6,6 +6,6 @@
   "minReplicas": 2,
   "maxReplicas": 6,
   "env": {
-    "ALLOWED_ORIGINS": ""
+    "ALLOWED_ORIGINS": "https://placeholder-til-vi-trenger-en.intern.nav.no"
   }
 }
