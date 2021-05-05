@@ -10,7 +10,7 @@ plugins {
 group = "no.nav.helse.flex"
 version = "1.0.0"
 description = "flex-intern-gateway"
-java.sourceCompatibility = JavaVersion.VERSION_16
+java.sourceCompatibility = JavaVersion.VERSION_14
 
 buildscript {
     repositories {
@@ -66,7 +66,7 @@ tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "16"
+        jvmTarget = "14"
         if (System.getenv("CI") == "true") {
             kotlinOptions.allWarningsAsErrors = true
         }
