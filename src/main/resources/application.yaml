@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+logging.config: "classpath:logback.xml"
+
+nais.cluster: ${NAIS_CLUSTER_NAME}
+
+spinnsyn.backend.url: "http://spinnsyn-backend"
+
+spring:
+  main.banner-mode: 'off'
+  profiles:
+    active: default
+
+allowed.origins: "http://localhost:3000,http://domain.nav.no"
+
+management:
+  endpoints:
+    web:
+      base-path: /internal
+      path-mapping.prometheus: /prometheus
+      exposure:
+        include: health,gateway,prometheus

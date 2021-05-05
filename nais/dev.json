@@ -1,0 +1,11 @@
+{
+  "app": "flex-intern-gateway",
+  "namespace": "flex",
+  "team": "flex",
+  "ingress": "https://flex-intern-gateway.dev.intern.nav.no",
+  "minReplicas": 1,
+  "maxReplicas": 2,
+  "env": {
+    "ALLOWED_ORIGINS": "https://flex-vedtak-mock.dev.nav.no"
+  }
+}
