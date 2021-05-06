@@ -6,6 +6,6 @@
   "minReplicas": 1,
   "maxReplicas": 2,
   "env": {
-    "ALLOWED_ORIGINS": "https://flex-vedtak-mock.dev.nav.no"
+    "ALLOWED_ORIGINS": "https://flex-vedtak-mock.dev.nav.no,http://localhost:8080"
   }
 }
