@@ -3,6 +3,7 @@
   paths:
     get:
       - /api/v1/veileder/vedtak
+      - /api/v1/analyse
 
 - basepath: spinnsyn-backend-testdata
   devOnly: true
