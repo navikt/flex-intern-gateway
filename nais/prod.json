@@ -3,6 +3,9 @@
   "namespace": "flex",
   "team": "flex",
   "ingress": "https://flex-intern-gateway.intern.nav.no",
+  "ingresser": {
+    "1": "https://flex-intern-gateway.intern.nav.no"
+  },
   "minReplicas": 2,
   "maxReplicas": 6,
   "env": {
