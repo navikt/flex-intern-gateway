@@ -52,25 +52,6 @@ class GatewayTest {
     }
 
     @Test
-    fun `ok kall videresendes med path parameter`() {
-        stubFor(
-            post(urlEqualTo("/api/v2/testdata/vedtak/1234"))
-                .willReturn(
-                    aResponse()
-                        .withBody("{\"headers\":{\"Hello\":\"World\"}}")
-                        .withHeader("Content-Type", "application/json")
-                )
-        )
-
-        webClient
-            .post().uri("/spinnsyn-backend-testdata/api/v2/testdata/vedtak/1234")
-            .exchange()
-            .expectStatus().isOk
-            .expectBody()
-            .jsonPath("$.headers.Hello").isEqualTo("World")
-    }
-
-    @Test
     fun `500 kall videresendes`() {
         stubFor(
             get(urlEqualTo("/api/v1/veileder/vedtak"))
