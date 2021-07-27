@@ -8,10 +8,11 @@
   devOnly: true
   serviceurlProperty: spinnsyn.backend.url
   paths:
+    get:
+      - /api/v1/testdata/fnr
     post:
-      - /api/v1/mock/vedtak/{fnr}
-      - /api/v1/mock/annullering/{fnr}
-      - /api/v2/testdata/vedtak/{fnr}
+      - /api/v1/testdata/vedtak
+      - /api/v1/testdata/annullering
     delete:
-      - /api/v1/mock/vedtak/{fnr}
+      - /api/v1/testdata/vedtak
 

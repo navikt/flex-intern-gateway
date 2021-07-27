@@ -26,7 +26,7 @@ class GatewayDisabledProdTest {
     fun `testdata api gir 404 i prod`() {
 
         webClient
-            .post().uri("/spinnsyn-backend-testdata/api/v2/testdata/vedtak/1234")
+            .post().uri("/spinnsyn-backend-testdata/api/v1/testdata/vedtak")
             .exchange()
             .expectStatus().isNotFound
     }
