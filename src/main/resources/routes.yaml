@@ -2,7 +2,6 @@
   serviceurlProperty: spinnsyn.backend.url
   paths:
     get:
-      - /api/v1/veileder/vedtak
       - /api/v2/veileder/vedtak
 
 - basepath: spinnsyn-backend-testdata
