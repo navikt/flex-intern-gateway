@@ -35,7 +35,7 @@ class GatewayTest {
     @Test
     fun `ok kall videresendes`() {
         stubFor(
-            get(urlEqualTo("/api/v1/veileder/vedtak"))
+            get(urlEqualTo("/api/v3/veileder/vedtak"))
                 .willReturn(
                     aResponse()
                         .withBody("{\"headers\":{\"Hello\":\"World\"}}")
@@ -44,7 +44,7 @@ class GatewayTest {
         )
 
         webClient
-            .get().uri("/spinnsyn-backend/api/v1/veileder/vedtak")
+            .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .exchange()
             .expectStatus().isOk
             .expectBody()
@@ -54,7 +54,7 @@ class GatewayTest {
     @Test
     fun `500 kall videresendes`() {
         stubFor(
-            get(urlEqualTo("/api/v1/veileder/vedtak"))
+            get(urlEqualTo("/api/v3/veileder/vedtak"))
                 .willReturn(
                     aResponse()
                         .withBody("{\"headers\":{\"Hello\":\"World\"}}")
@@ -64,7 +64,7 @@ class GatewayTest {
         )
 
         webClient
-            .get().uri("/spinnsyn-backend/api/v1/veileder/vedtak")
+            .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .exchange()
             .expectStatus().is5xxServerError
             .expectBody()
@@ -82,7 +82,7 @@ class GatewayTest {
     @Test
     fun `selvbetjening-idtoken cookie flyttes til auth header`() {
         stubFor(
-            get(urlEqualTo("/api/v1/veileder/vedtak"))
+            get(urlEqualTo("/api/v3/veileder/vedtak"))
                 .withHeader("Authorization", EqualToPattern("Bearer napoleonskake"))
                 .willReturn(
                     aResponse()
@@ -92,7 +92,7 @@ class GatewayTest {
         )
 
         webClient
-            .get().uri("/spinnsyn-backend/api/v1/veileder/vedtak")
+            .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .cookie("selvbetjening-idtoken", "napoleonskake")
             .exchange()
 
@@ -104,7 +104,7 @@ class GatewayTest {
     @Test
     fun `isso-idtoken cookie flyttes til auth header`() {
         stubFor(
-            get(urlEqualTo("/api/v1/veileder/vedtak"))
+            get(urlEqualTo("/api/v3/veileder/vedtak"))
                 .withHeader("Authorization", EqualToPattern("Bearer napoleonskake"))
                 .willReturn(
                     aResponse()
@@ -114,7 +114,7 @@ class GatewayTest {
         )
 
         webClient
-            .get().uri("/spinnsyn-backend/api/v1/veileder/vedtak")
+            .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .cookie("isso-idtoken", "napoleonskake")
             .exchange()
 
@@ -126,7 +126,7 @@ class GatewayTest {
     @Test
     fun `isso cookie flyttes ikke til auth header hvis eksisterende auth header`() {
         stubFor(
-            get(urlEqualTo("/api/v1/veileder/vedtak"))
+            get(urlEqualTo("/api/v3/veileder/vedtak"))
                 .withHeader("Authorization", EqualToPattern("Bearer original"))
                 .willReturn(
                     aResponse()
@@ -136,7 +136,7 @@ class GatewayTest {
         )
 
         webClient
-            .get().uri("/spinnsyn-backend/api/v1/veileder/vedtak")
+            .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .header("Authorization", "Bearer original")
             .cookie("isso-idtoken", "napoleonskake")
             .exchange()
