@@ -95,7 +95,6 @@ class GatewayTest {
             .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .cookie("selvbetjening-idtoken", "napoleonskake")
             .exchange()
-
             .expectStatus().isOk
             .expectBody()
             .jsonPath("$.headers.Hello").isEqualTo("World")
@@ -117,7 +116,6 @@ class GatewayTest {
             .get().uri("/spinnsyn-backend/api/v3/veileder/vedtak")
             .cookie("isso-idtoken", "napoleonskake")
             .exchange()
-
             .expectStatus().isOk
             .expectBody()
             .jsonPath("$.headers.Hello").isEqualTo("World")
@@ -140,7 +138,6 @@ class GatewayTest {
             .header("Authorization", "Bearer original")
             .cookie("isso-idtoken", "napoleonskake")
             .exchange()
-
             .expectStatus().isOk
             .expectBody()
             .jsonPath("$.headers.Hello").isEqualTo("World")
