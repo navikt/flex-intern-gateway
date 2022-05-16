@@ -16,3 +16,8 @@
     delete:
       - /api/v1/testdata/vedtak
 
+- basepath: sykepengesoknad-backend
+  serviceurlProperty: sykepengesoknad.backend.url
+  paths:
+    get:
+      - /api/veileder/soknader
