@@ -41,6 +41,7 @@ spec:
     outbound:
       rules:
         - application: spinnsyn-backend
+        - application: sykepengesoknad-backend
   env:
   {{#each env}}
      - name: {{@key}}
