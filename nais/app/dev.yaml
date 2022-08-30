@@ -1,0 +1,10 @@
+app: flex-intern-gateway
+namespace: flex
+team: flex
+ingresser:
+  '1': https://flex-intern-gateway.dev.intern.nav.no
+  '2': https://flex-intern-gateway.dev.nav.no
+minReplicas: 1
+maxReplicas: 2
+env:
+  ALLOWED_ORIGINS: https://flex-vedtak-mock.dev.nav.no
