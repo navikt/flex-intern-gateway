@@ -29,7 +29,7 @@ class RouteBuilder(
 
                     paths.map { "/${service.basepath}$it" }
                         .forEach { path ->
-                            routes = routes.route("${metode.name} $path") { p: PredicateSpec ->
+                            routes = routes.route("${metode.name()} $path") { p: PredicateSpec ->
                                 p.path(path)
                                     .and()
                                     .method(metode)
