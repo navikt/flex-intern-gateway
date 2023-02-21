@@ -20,7 +20,7 @@ repositories {
     maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-val logstashEncoderVersion = "7.2"
+val logstashEncoderVersion = "7.3"
 
 dependencyManagement {
     imports {
