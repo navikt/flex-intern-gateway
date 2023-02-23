@@ -13,8 +13,8 @@ import org.springframework.test.web.reactive.server.WebTestClient
     webEnvironment = RANDOM_PORT,
     properties = [
         "spinnsyn.backend.url=http://localhost:\${wiremock.server.port}",
-        "nais.cluster=prod-gcp",
-    ],
+        "nais.cluster=prod-gcp"
+    ]
 )
 @AutoConfigureWireMock(port = 0)
 class GatewayDisabledProdTest {
@@ -24,7 +24,6 @@ class GatewayDisabledProdTest {
 
     @Test
     fun `testdata api gir 404 i prod`() {
-
         webClient
             .post().uri("/spinnsyn-backend-testdata/api/v1/testdata/vedtak")
             .exchange()

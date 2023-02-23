@@ -15,8 +15,8 @@ import org.springframework.test.web.reactive.server.WebTestClient
     webEnvironment = RANDOM_PORT,
     properties = [
         "spinnsyn.backend.url=http://localhost:\${wiremock.server.port}",
-        "nais.cluster=test",
-    ],
+        "nais.cluster=test"
+    ]
 )
 @AutoConfigureWireMock(port = 0)
 class GatewayTest {

@@ -14,7 +14,6 @@ class RouteConfigReader {
 
     @Bean
     fun endpoints(): List<Service> {
-
         val mapper = ObjectMapper(YAMLFactory()).registerModule(KotlinModule.Builder().build())
 
         val serviceList: List<Service> = mapper.readValue(this.javaClass.getResourceAsStream("/routes.yaml"))

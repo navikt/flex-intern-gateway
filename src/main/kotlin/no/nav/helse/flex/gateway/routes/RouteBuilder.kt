@@ -16,7 +16,6 @@ class RouteBuilder(
 
     @Bean
     fun myRoutes(builder: RouteLocatorBuilder, services: List<Service>, env: Environment): RouteLocator {
-
         var routes = builder.routes()
 
         services
@@ -26,7 +25,6 @@ class RouteBuilder(
                     ?: throw RuntimeException("Fant ikke property ${service.serviceurlProperty}")
 
                 fun addPath(paths: List<String>, metode: HttpMethod) {
-
                     paths.map { "/${service.basepath}$it" }
                         .forEach { path ->
                             routes = routes.route("${metode.name()} $path") { p: PredicateSpec ->
