@@ -2,9 +2,5 @@ app: flex-intern-gateway
 namespace: flex
 team: flex
 ingress: https://flex-intern-gateway.intern.nav.no
-ingresser:
-  '1': https://flex-intern-gateway.intern.nav.no
 minReplicas: 2
 maxReplicas: 6
-env:
-  ALLOWED_ORIGINS: https://placeholder-til-vi-trenger-en.intern.nav.no

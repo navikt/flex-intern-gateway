@@ -13,9 +13,7 @@ spec:
     cpuThresholdPercentage: 80
   port: 8080
   ingresses:
-  {{#each ingresser}}
-   - {{this}}
-  {{/each}}
+    - {{ ingress }}
   liveness:
     path: /internal/health
     initialDelay: 10
@@ -42,8 +40,3 @@ spec:
       rules:
         - application: spinnsyn-backend
         - application: sykepengesoknad-backend
-  env:
-  {{#each env}}
-     - name: {{@key}}
-       value: {{this}}
-  {{/each}}
